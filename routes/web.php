@@ -28,7 +28,7 @@ Route::get('/addmanzana', [ManzanaController::class, 'create'])->middleware('aut
 Route::post('/addmanzana', [ManzanaController::class, 'store'])->middleware('auth')->name('añadirmanzana');
 Route::get('/modificarmanzana/{id?}', [ManzanaController::class, 'edit'])->middleware('auth')->name('getmodificarmanzana');
 Route::post('/postmodmanzana', [ManzanaController::class, 'update'])->middleware('auth')->name('postmodmanzana');
-Route::post('/eliminarmanzana', [ManzanaController::class, 'destroy'])->middleware('auth')->name('eliminarmanzana');
+Route::post('/eliminarmanzana', [ManzanaController::class, 'destroy'])->middleware('auth', 'eliminarmanzana')->name('eliminarmanzana');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
