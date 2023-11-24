@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('manzanas', function (Blueprint $table) {
             $table->id();
             $table->string('tipomanzana');
-            $table->integer('precioKilo');
+            $table->integer('preciokilo');
             $table->timestamps();
         });
     }

@@ -13,6 +13,7 @@
       <th>ID</th>
       <th>Tipo de manzana</th>
       <th>Precio Kilo</th>
+      <th>Modificar/Eliminar</th>
     </tr>
   </thead>
   <tbody>
@@ -20,11 +21,13 @@
     <tr>
     <td>{{$manzana->id}}</td>
     <td>{{$manzana->tipomanzana}}</td>
-    <td>{{$manzana->precioKilo}}</td>
+    <td>{{$manzana->preciokilo}}</td>
+    <td><a href="/modificarmanzana/{{$manzana->id}}">Modificar</a></td>
     </tr>
   @endforeach
   </tbody>
 </table>
+<a href="/addmanzana">Añadir Manzana</a>
     
 </body>
 </html>

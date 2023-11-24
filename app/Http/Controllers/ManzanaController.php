@@ -56,9 +56,16 @@ class ManzanaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Manzana $manzana)
+    public function edit($id)
     {
-        //
+        $manzana = Manzana::find($id);
+        if($manzana){
+            return view('modificarmanzana', [
+                'manzana' => $manzana
+            ]);
+        }else{
+            return redirect('/manzanas');
+        }
     }
 
     /**
@@ -66,14 +73,31 @@ class ManzanaController extends Controller
      */
     public function update(Request $request, Manzana $manzana)
     {
-        //
+        $request->validate([
+            'id' => 'required',
+            'tipomanzana' => 'required|string|max:24',
+            'preciokilo' => 'required|max:10',
+        ]);
+        $manzana = Manzana::find($request->input('id'));
+        if($manzana){
+        $manzana->update([
+            'tipomanzana' => $request->input('tipomanzana'),
+            'preciokilo' => $request->input('preciokilo'),
+        ]);
+        }
+        return redirect('/manzanas');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Manzana $manzana)
+    public function destroy(Request $request)
     {
-        //
+        $request->validate([
+            'id' => 'required',
+        ]);
+        $manzana = Manzana::find($request->input('id'));;
+        $manzana->delete();
+        return redirect("/manzanas");
     }
 }
