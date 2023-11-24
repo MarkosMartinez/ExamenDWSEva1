@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('manzanas', function (Blueprint $table) {
             $table->id();
+            $table->string('tipoManzana');
+            $table->integer('precioKilo');
             $table->timestamps();
         });
     }

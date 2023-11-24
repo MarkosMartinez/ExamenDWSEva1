@@ -12,7 +12,10 @@ class ManzanaController extends Controller
      */
     public function index()
     {
-        //
+        $manzanas = Manzana::all();
+        return view('manzanas', [
+            'manzanas' => $manzanas
+        ]);
     }
 
     /**
