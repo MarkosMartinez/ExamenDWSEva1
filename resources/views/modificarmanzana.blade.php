@@ -9,7 +9,7 @@
 
 <h1>Modificar o Eliminar manzana:</h1>
 
-<form action="{{ route('postmodmanzana') }}" method="post">
+<form action="{{ route('modificarmanzana') }}" method="post">
     @csrf
     <input type="hidden" name="id" value="{{$manzana->id}}">
     <div>

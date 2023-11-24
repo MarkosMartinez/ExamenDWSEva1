@@ -1,3 +1,32 @@
+## Comandos utilizados:
+<ul>
+<li>git config --global user.name "Markos Martinez"</li>
+<li>git config --global user.email "ikbdk@plaiaundi.net"</li>
+<li>git init</li>
+<li>git add .</li>
+<li>git commit –m “Primer Commit”</li>
+<li>php artisan make:model Manzana</li>
+<li>php artisan make:controller ManzanaController --model=Manzana</li>
+<li>php artisan make:migration create_manzanas_table</li>
+<li>php artisan migrate</li>
+<li>git add .</li>
+<li>git commit -m "Modelo, controlador y migrate de Manzanas creado"</li>
+<li>git add .</li>
+<li>git commit -m "Visualizar Manzanas Funciona"</li>
+<li>php artisan migrate //Despues de cambiar algunos nombres en la DB</li>
+<li>git add .</li>
+<li>git commit -m "addManzana Funciona!"</li>
+<li>git add .</li>
+<li>git commit -m "Modificar y eliminar funciona!"</li>
+<li>git add .</li>
+<li>git commit -m "Middleware de eliminar creado"</li>
+<li>git add .</li>
+<li>git commit -m "Pequenas mejoras"</li>
+<li>git branch -M main</li>
+<li>git remote add origin https://github.com/MarkosMartinez/ExamenDWSEva1.git</li>
+<li>git push -u origin main</li>
+</ul>
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
