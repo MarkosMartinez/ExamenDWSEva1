@@ -8,7 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Manzana extends Model
 {
     protected $fillable = [
-        'tipoManzana',
-        'precioKilo',
+        'tipomanzana',
+        'preciokilo',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    use HasFactory;
 }

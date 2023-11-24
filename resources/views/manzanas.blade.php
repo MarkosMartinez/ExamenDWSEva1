@@ -6,6 +6,7 @@
     <title>Lista de manzanas</title>
 </head>
 <body>
+    <h1>Lista de manzanas:</h1>
 <table>
 <thead>
     <tr>
@@ -18,7 +19,7 @@
   @foreach ($manzanas as $manzana)
     <tr>
     <td>{{$manzana->id}}</td>
-    <td>{{$manzana->tipoManzana}}</td>
+    <td>{{$manzana->tipomanzana}}</td>
     <td>{{$manzana->precioKilo}}</td>
     </tr>
   @endforeach

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Manzana;
 use Illuminate\Http\Request;
 
+
 class ManzanaController extends Controller
 {
     /**
@@ -23,7 +24,7 @@ class ManzanaController extends Controller
      */
     public function create()
     {
-        //
+        return view('addmanzana');
     }
 
     /**
@@ -31,7 +32,17 @@ class ManzanaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'tipomanzana' => 'required|string|max:24',
+            'preciokilo' => 'required|max:10',
+        ]);
+
+        Manzana::create([
+            'tipomanzana' => $request->tipomanzana,
+            'preciokilo' => $request->preciokilo
+        ]);
+
+        return redirect('/manzanas');
     }
 
     /**

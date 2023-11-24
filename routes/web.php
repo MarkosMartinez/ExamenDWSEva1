@@ -23,7 +23,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/manzanas', [ManzanaController::class, 'index'])->name('vermanzanas');
+Route::get('/manzanas', [ManzanaController::class, 'index'])->middleware('auth')->name('vermanzanas');
+Route::get('/addmanzana', [ManzanaController::class, 'create'])->middleware('auth')->name('addmanzana');
+Route::post('/añadirmanzana', [ManzanaController::class, 'store'])->middleware('auth')->name('añadirmanzana');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
